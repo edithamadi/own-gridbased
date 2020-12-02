@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: gainsboro;
+  }
+
+nav {
+    background-color: #050507d0;
+    height: 50px;
+  }
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.left li a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: rgb(240, 240, 247);
+    float: left;
+}  
+
+.right li a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: rgb(240, 240, 247);
+    float: right;
+}  
+
+/* header{
+    background-image: url("images/Artboard-1-copy-2-100.jpeg");
+} */
+.welcome {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 5px;
+    border-color: black;      
+}
+.container{
+    text-align: center;
+    background-image: url("images/Artboard-1-copy-2-100.jpeg");   
+}
+    
