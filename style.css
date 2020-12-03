@@ -1,51 +1,179 @@
-body {
-    margin: 0;
-    padding: 0;
+/*css variables*/
+
+:root{
+    --primary:#ddd;
+    --dark:rgb(153, 29, 29);
+    --light:#fff;
+    --shadow:0 1px 5px rgba(104, 104, 104, 0.8);
+    --secondary:rgb(5, 5, 5);
+}
+
+html{
     box-sizing: border-box;
-    text-align: center;
-    background-color: gainsboro;
-  }
-
-nav {
-    background-color: #050507d0;
-    height: 50px;
-  }
-
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--light);
 }
-.left li a{
-    display: block;
-    padding: 15px;
-    text-decoration: none;
-    color: rgb(240, 240, 247);
-    float: left;
-}  
 
-.right li a{
-    display: block;
-    padding: 15px;
-    text-decoration: none;
-    color: rgb(240, 240, 247);
-    float: right;
-}  
+nav{
+    background-color: var(--shadow);
+}
 
-/* header{
-    background-image: url("images/Artboard-1-copy-2-100.jpeg");
-} */
-.welcome {
+body{
+    background: #ccc;
+    margin: 30px 50px;
+    line-height: 1.4;
+}
+
+.btn{
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+}
+img{
+    max-width: 100%;
+}
+
+.wrapper{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 5px;
-    border-color: black;      
+    grid-gap:20px;
 }
-.container{
-    text-align: center;
-    background-image: url("images/Artboard-1-copy-2-100.jpeg");   
+
+/*Navigation*/
+
+.main-nav ul{
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(8, 1fr);
 }
+
+.main-nav a{
     
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 19px;
+    box-shadow: var(--shadow);
+
+}
+
+.main-nav a:hover{
+    background: var(--dark);
+    color: var(--light);
+}
+
+/*Top container*/
+.top-container{
+    display: grid;
+    grid-row: gap 20px;
+    grid-template-areas:
+        'showcase showcase top-box-a'
+        'showcase showcase top-box-b';
+}
+
+/*ShowCase*/
+.showcase{
+    grid-area: showcase;
+    min-height: 400px;
+    background: url(images/meats-03-1-scaled.jpeg);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    margin: 15px;
+}
+
+.top-box-a {
+    grid-area: top-box-a;
+
+}
+
+.top-box-b {
+    grid-area: top-box-b;
+    
+}
+
+/*boxes*/
+.boxes{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+
+}
+
+.box{
+    background: var(--primary);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+}
+
+.take{
+    grid-area: showcase;
+    min-height: 400px;
+    min-width: 30%;
+    background: url(images/w.jpeg);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    margin: 7px;
+   
+    }
+
+.take-away{
+    grid-area: showcase;
+    min-height: 400px;
+    min-width: 70%;
+    background: url(images/home_barber2_sectionbg1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    margin: 7px;
+   
+    }
+
+
+.delivery{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+
+}
+
+.footer{
+    margin-top: 2rem;
+    background: var(--dark);
+    color:var(--secondary);
+    text-align: center;
+    padding: 1rem;
+
+}
+
+/*media querries*/
+@media(max-width: 700px) {
+    .top-container {
+        grid-tempalte-areas:
+        'showcase showcase'
+        'top-box-a top-box-b';
+    }
+
+    .showcase h1{
+        font: size 2.5rem;
+    }    
+
+    main-nav ul{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
